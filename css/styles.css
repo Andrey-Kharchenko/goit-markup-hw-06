@@ -218,18 +218,21 @@ ul {
 
 .footer .container {
     display: flex;
-    gap: 120px;
 }
 
-.footer h3 {
+.footer-icons {
+    margin-left: 120px;
+}
+
+.footer-subscribe {
+    margin-left: 80px;
+}
+
+.footer-title {
     color: var(--color-white);
     font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 0.02em;
-    line-height: var(--line-height-p-text);
     margin-bottom: 16px;
     margin-top: 0;
-    text-align: start;
 }
 
 .footer .social-list {
@@ -263,7 +266,7 @@ ul {
     border: 1px solid var(--color-footer);
     border-radius: 4px; 
     padding:12px 24px; 
-    transition: background-color var(--timing-cubic), border var(--timing-cubic), color var(--timing-cubic), box-shadow var(--timing-cubic), border-color var(--timing-cubic);
+    transition: background-color var(--timing-cubic), border var(--timing-cubic), color var(--timing-cubic), box-shadow var(--timing-cubic);
 }
 
 .filter-button:hover,
@@ -460,7 +463,7 @@ img {
     fill: var(--color-customers);
     border: 1px solid var(--color-customers);
     border-radius: 4px;
-    transition: fill var(--timing-cubic), border var(--timing-cubic), border-color var(--timing-cubic);
+    transition: fill var(--timing-cubic), border var(--timing-cubic);
 }
 
 .link-customers:hover,
@@ -502,8 +505,6 @@ img {
     transition: transform var(--timing-cubic);
 }
 
-/* Плавный хедер сделал) Не понравился, куча лишего кода и выглядит так себе, убрал его) */
-
 /* Modal */
 
 .backdrop { 
@@ -531,9 +532,10 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 72px 24px 24px 24px;
     transform: translate(-50%, -50%) scale(1);
     min-width: 408px;
-    min-height: 576px;
+    min-height: 584px;
     transition: transform var(--timing-cubic), box-shadow var(--timing-cubic), background-color var(--timing-cubic);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -564,7 +566,195 @@ img {
     background-color: var(--button-hover);
 }
 
+/* Footer-form */
 
+.subscribe-email {
+    width: 264px;
+    height: 40px;
+    padding: 8px 16px;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    color: var(--color-white);
+    background-color: var(--color-text-primary);
+}
+
+.subscribe-email:focus {
+    outline: none;
+    border-color: var(--button-hover);
+}
+
+.form-subscribe {
+    display: flex;
+}
+
+.button-subscribe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-left: 24px;
+    margin-right: 0;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background-color: var(--color-brand);
+    transition: background-color var(--timing-cubic);
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.button-subscribe:hover,
+.button-subscribe:focus {
+    background-color: var(--button-hover);
+}
+
+.button-subscribe::after {
+    content: "";
+    height: 24px;
+    width: 24px;
+    margin-left: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/subscribe.svg);
+}
+
+.modal-title {
+    font-weight: 500;
+    text-align: center;
+    margin-top: 0;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-label-name {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    line-height: 1.17;
+    margin-bottom: 4px;
+    color: var(--color-customers);
+}
+
+.modal-input {
+    width: 100%;
+    height: 40px;
+    padding-left: 38px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border var(--timing-cubic);
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: var(--color-brand);
+}
+
+.modal-input:focus + .modal-input-icon {
+    fill: var(--color-brand);
+}
+
+.modal-label-input {
+    margin-bottom: 8px;
+}
+
+.input-position {
+    display: block;
+    position: relative;
+}
+
+.modal-input-icon {
+    position: absolute;
+    top: 14px;
+    left: 19px;
+    transition: fill var(--timing-cubic);
+}
+
+.comment-input {
+    resize: none;
+    height: 120px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    line-height: 1.17;
+    transition: border var(--timing-cubic);
+}
+
+.comment-input:focus {
+    border-color: var(--color-brand);
+}
+
+.comment-input::placeholder {
+    font-size: 12px;
+	line-height: 1.17;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-label-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    line-height: 1.17;
+    color: #757575;
+}
+
+.modal-label-checkbox::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1.25px solid var(--color-text-primary);
+}
+
+.checkbox:checked + .modal-label-checkbox::before {
+    border: none;
+    background-image: url(../images/vector.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--button-hover);
+}
+
+.checkbox:focus + .modal-label-checkbox::before {
+    border: 1px solid var(--color-brand);
+}
+
+.modal-label-checkbox a{
+    text-decoration: underline;
+    color: var(--color-brand);
+}
+
+.modal-button-submit {
+    align-self: center;
+    width: 169px;
+    height: 56px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: background-color var(--timing-cubic);
+    color: var(--color-white);
+    background-color: var(--color-brand);
+}
+
+.modal-button-submit:hover,
+.modal-button-submit:focus {
+    background-color: var(--button-hover);
+}
 
 
 
