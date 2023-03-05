@@ -576,6 +576,7 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
+    transition: border var(--timing-cubic);
     color: var(--color-white);
     background-color: var(--color-text-primary);
 }
@@ -725,6 +726,7 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--button-hover);
+    transition: background-image var(--timing-cubic), background-color var(--timing-cubic);
 }
 
 .checkbox:focus + .modal-label-checkbox::before {
